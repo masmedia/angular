@@ -5,12 +5,18 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'courses',            // CSS Selector 
     template: `
-            <button (click)="onSave()">Save</button>
+        <div (click)="onDivClicked()">
+            <button (click)="onSave($event)">Save</button>
+        </div>
         `
 })
 
 export class CoursesComponent {
-    onSave(){
-        console.log("Button was clicked.");
+    onDivClicked(){
+        console.log("Div was clicked.");
+    }
+    onSave($event){
+        $event.stopPropagation();
+        console.log("Button was clicked.", $event);
     }    
 }   
