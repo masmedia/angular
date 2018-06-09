@@ -6,17 +6,14 @@ import { Component } from '@angular/core';
     selector: 'courses',            // CSS Selector 
     template: `
             <h2>{{ title }}</h2>
-            <ul>
-                <li *ngFor="let course of courses">
-                    {{ course }}
-                </li>
-
-            </ul>
+            <img src="{{ imageUrl }}" />
+            <img [src]="imageUrl" />
         `
 })
 
 export class CoursesComponent {
     title = "List of courses";
+    imageUrl = "https://www.verdict.co.uk/wp-content/uploads/2017/11/shutterstock_617032220.jpg"
 
     courses;
 
