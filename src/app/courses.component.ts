@@ -5,18 +5,13 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'courses',            // CSS Selector 
     template: `
-        <div (click)="onDivClicked()">
-            <button (click)="onSave($event)">Save</button>
-        </div>
+            <input (keyup.enter)="onKeyUp()" />
         `
 })
 
 export class CoursesComponent {
-    onDivClicked(){
-        console.log("Div was clicked.");
-    }
-    onSave($event){
-        $event.stopPropagation();
-        console.log("Button was clicked.", $event);
+    
+    onKeyUp(){
+        console.log("ENTER was pressed.");
     }    
 }   
