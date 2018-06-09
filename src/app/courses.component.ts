@@ -5,12 +5,12 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'courses',            // CSS Selector 
     template: `
-            <button [style.backgroundColor]="isActive ? 'blue' : '#FFF8E7'">Save</button>
+            <button (click)="onSave()">Save</button>
         `
 })
 
 export class CoursesComponent {
-    title = "List of courses";
-    isActive = false;  // Controls style binding
-    
+    onSave(){
+        console.log("Button was clicked.");
+    }    
 }   
