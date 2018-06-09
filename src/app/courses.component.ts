@@ -5,16 +5,13 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'courses',            // CSS Selector 
     template: `
-            <h2>{{ title }}</h2>
-            <img src="{{ imageUrl }}" />
-            <img [src]="imageUrl" />
+            <button class="btn btn-primary">Save</button>
         `
 })
 
 export class CoursesComponent {
     title = "List of courses";
-    imageUrl = "https://www.verdict.co.uk/wp-content/uploads/2017/11/shutterstock_617032220.jpg"
-
+    colSpan = 2;    
     courses;
 
     // Dependency injection
@@ -22,8 +19,4 @@ export class CoursesComponent {
         this.courses = service.getCourses();
     }
 
-    getTitle() {
-        return this.title;
-    }
- 
 }   
