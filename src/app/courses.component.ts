@@ -5,13 +5,15 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'courses',            // CSS Selector 
     template: `
-            <input #email (keyup.enter)="onKeyUp(email.value)" />
+            <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
         `
 })
 
 export class CoursesComponent {
+
+    email = "me@example.com"
     
-    onKeyUp(email){
-        console.log(email);
+    onKeyUp(){
+        console.log(this.email);
     }    
 }   
