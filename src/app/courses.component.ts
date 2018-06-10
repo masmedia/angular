@@ -5,13 +5,13 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'courses',            // CSS Selector 
     template: `
-            <input (keyup.enter)="onKeyUp()" />
+            <input (keyup.enter)="onKeyUp($event)" />
         `
 })
 
 export class CoursesComponent {
     
-    onKeyUp(){
-        console.log("ENTER was pressed.");
+    onKeyUp($event){
+        console.log($event.target.value);
     }    
 }   
