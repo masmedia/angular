@@ -5,15 +5,23 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'courses',            // CSS Selector 
     template: `
-            <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
+           {{ course.title | lowercase | uppercase }} <br/>
+           {{ course.rating | number:'2.1-5' }} <br/>
+           {{ course.students | number }} <br/>
+           {{ course.price | currency:'TRY':true:'2.1-3' }} <br/>
+           {{ course.releaseDate | date:'shortDate'}} <br/>
+           {{ course.discountRate | percent }}
         `
 })
 
 export class CoursesComponent {
 
-    email = "me@example.com"
-    
-    onKeyUp(){
-        console.log(this.email);
-    }    
+    course = {
+        title: "The Complete Angular Course",
+        rating: 4.9745,
+        students: 30123,
+        price: 190.95,
+        releaseDate: new Date(2016, 3, 1),
+        discountRate: 0.0397
+    }        
 }   
